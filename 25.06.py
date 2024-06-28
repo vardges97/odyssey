@@ -10,23 +10,26 @@ def zfinder(str):
 def changetoupper(text):
     new_text = ""
     for i in text:
-        i = ord(i) - 32
-        new_text += chr(i)
+        # i = ord(i) - 32
+        new_text += chr(ord(i)-32)
     return new_text
 
-# print(changetoupper(word))
+print(changetoupper(word))
 
 sentance='hello there, general kenobi !'
 
-# def changefirsttoupper(text):
-#     new_text = ""
-#     for i in text:
-#         upper_char = chr(ord(i[0]) - 32)
-#         res = upper_char + i[1:]
-#         new_text += res
-#
-#     return new_text
-# print(changefirsttoupper(sentance))
+def changefirsttoupper(text):
+    x = text.split()
+    new_text = []
+    for i in x:
+        if len(i) > 1:
+            upper_char = chr(ord(i[0]) - 32)
+            res = upper_char + i[1:]
+            new_text.append(res)
+    y = " ".join(new_text)
+    return y
+x = changefirsttoupper(sentance)
+print(x)
 
 def reverser(str):
     return str[::-1]
@@ -41,7 +44,7 @@ def palindrometester(str):
     else:
         return "no"
 wrd = 'radar'
-print(palindrometester(wrd))
+# print(palindrometester(wrd))
 
 def concater(str1,str2):
     return str1 + " " + str2
@@ -49,7 +52,7 @@ def concater(str1,str2):
 wrd1 = 'hello'
 wrd2 = 'there'
 
-print(concater(wrd1,wrd2))
+# print(concater(wrd1,wrd2))
 
 def replacer(str):
     changed = ''
@@ -58,4 +61,4 @@ def replacer(str):
             i = 'x'
         changed += i
     return changed
-print(replacer('banana'))
+# print(replacer('banana'))
